@@ -13,15 +13,17 @@ namespace from_page__1
         /// метод разделения предложения в массив слов
         /// </summary>
         /// <returns>массив слов</returns>
-         static void SeparatesWords(string sentence)
+         static string [] SeparatesWords ( string Text)
         {
-            string[] words = sentence.Split(' ');
+
+            string[] words = Text.Split(' ');
+            return words;
         }
 
         /// <summary>
         /// метод вывода слов в отдельных строках
         /// </summary>
-        static void Print( params string []words)
+        static void Print(string []words)
         {
             for (int i = 0; i < words.Length; i++)
             {
@@ -63,13 +65,13 @@ namespace from_page__1
             
             string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
-            sentence = Console.ReadLine();
+            sentence = Console.ReadLine(); // Заполняем переменный предложением.
             
-            SeparatesWords(sentence); // проброс в первый метод идет
+            //SeparatesWords(sentence); // проброс в первый метод идет
 
-            // необходим возврат и проброс во второй метод
-
-            Print([] words);
+            //проброс во второй метод
+            string [] arr = SeparatesWords (sentence);
+            Print(arr);
 
             Console.ReadKey();
         }
