@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,12 +17,17 @@ namespace from_page__1
         {
             string[] words = sentence.Split(' ');
         }
+
         /// <summary>
         /// метод вывода слов в отдельных строках
         /// </summary>
-        static void PrintWords(string []words)
+        static void Print( params string []words)
         {
-            // Console.Write([] words);
+            for (int i = 0; i < words.Length; i++)
+            {
+                Console.Write($"{words[i]}" + "\n");
+            }
+
         }
 
 
@@ -54,7 +60,7 @@ namespace from_page__1
             //В программе, помимо основного метода main, присутствует два других метода, которые вызываются в теле метода main.
             //Названием методов соответствуют тому, что они делают(разделяют или выводят данные).
             #endregion
-
+            
             string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
             sentence = Console.ReadLine();
@@ -62,8 +68,8 @@ namespace from_page__1
             SeparatesWords(sentence); // проброс в первый метод идет
 
             // необходим возврат и проброс во второй метод
-            string[] words;
-            
+
+            Print([] words);
 
             Console.ReadKey();
         }
