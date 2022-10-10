@@ -15,7 +15,6 @@ namespace from_page__1
         /// <returns>массив слов</returns>
          static string [] SeparatesWords ( string Text)
         {
-
             string[] words = Text.Split(' ');
             return words;
         }
@@ -29,7 +28,6 @@ namespace from_page__1
             {
                 Console.Write($"{words[i]}" + "\n");
             }
-
         }
 
 
@@ -67,11 +65,8 @@ namespace from_page__1
             Console.WriteLine("Введите предложение:");
             sentence = Console.ReadLine(); // Заполняем переменный предложением.
             
-            //SeparatesWords(sentence); // проброс в первый метод идет
-
-            //проброс во второй метод
-            string [] arr = SeparatesWords (sentence);
-            Print(arr);
+            string [] arr = SeparatesWords (sentence); // переменная массив для возвращения первого метода
+            Print(arr); // вызов второго метода для вывода на экран консоли
 
             Console.ReadKey();
         }
