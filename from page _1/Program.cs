@@ -9,31 +9,33 @@ namespace from_page__1
 {
     internal class Program
     {
-        /// <summary>
-        /// метод разделения предложения в массив слов
-        /// </summary>
-        /// <returns>массив слов</returns>
-         static string [] SeparatesWords ( string Text)
-        {
-            string[] words = Text.Split(' ');
-            return words;
-        }
-
-        /// <summary>
-        /// метод вывода слов в отдельных строках
-        /// </summary>
-        static void Print(string []words)
-        {
-            for (int i = 0; i < words.Length; i++)
-            {
-                Console.Write($"{words[i]}" + "\n");
-            }
-        }
+        
 
 
 
         static void Main(string[] args)
         {
+
+            /// <summary>
+            /// метод разделения предложения в массив слов
+            /// </summary>
+            /// <returns>массив слов</returns>
+            //static string SeparatesWords (string Text)
+            //{
+            //    string[] words = Text.Split(' ');
+            //    return words;
+            //}
+
+            ///// <summary>
+            ///// метод вывода слов в отдельных строках
+            ///// </summary>
+            //static void Print(string[] words)
+            //{
+            //    for (int i = 0; i < words.Length; i++)
+            //    {
+            //        Console.Write($"{words[i]}" + "\n");
+            //    }
+            //}
             #region
             //Задание 1.Метод разделения строки на слова
             //Что нужно сделать
@@ -60,13 +62,13 @@ namespace from_page__1
             //В программе, помимо основного метода main, присутствует два других метода, которые вызываются в теле метода main.
             //Названием методов соответствуют тому, что они делают(разделяют или выводят данные).
             #endregion
-            
+
             string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
             sentence = Console.ReadLine(); // Заполняем переменный предложением.
             
-            string [] arr = SeparatesWords (sentence); // переменная массив для возвращения первого метода
-            Print(arr); // вызов второго метода для вывода на экран консоли
+            //string [] arr = SeparatesWords (sentence); // переменная массив для возвращения первого метода
+            //Print(arr); // вызов второго метода для вывода на экран консоли
 
             Console.ReadKey();
         }
