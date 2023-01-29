@@ -14,14 +14,31 @@ namespace File_1
             // 1.2. Создать метод, принимающий две матрицу, возвращающий их сумму
             // 1.3. Создать метод, принимающий две матрицу, возвращающий их произведение
 
-        static void multiMatrix (int [,] matrix, int multi) 
-        {
-            foreach (int item in matrix)
-            {
-                Console.Write(item * multi);
-            }
-            
-        }
+
+        // Метод умножающий две матрицы
+        //static int multiMatrix (int [,] matrix, int [,] matrix2) 
+        //{
+        //    return matrixRes;
+        //}
+
+        // метод умножающий матрицу на число
+        //static int matrixMultiFactor (int[,]matrix,int factor)
+        //{
+        //    for (int i = 0; i < matrix.Length; i++)
+        //    {
+        //        for (int j = 0; j < matrix.Length; j++)
+        //        {
+        //            matrix[i, j] = matrix[i, j] * factor;
+        //            //Console.Write($"{matrix[i, j]}\t");
+        //        }
+        //    }
+        //    return matrix;
+        //}
+
+        // метод производящий сложение двух матриц
+ 
+
+
 
         static void Main(string[] args)
         {
@@ -32,11 +49,13 @@ namespace File_1
             Console.Write("Введите множитель: ");
             int factor = int.Parse(Console.ReadLine());
             Console.WriteLine();
-            Console.WriteLine("Исходная матрица:");
 
             int[,] matrix = new int[row, col];
+            int[,] matrix2 = new int[row, col];
             Random random = new Random();
 
+            Console.WriteLine("Исходная матрица один:");
+            // заполнение случайными числами первой матрицы
             for (int i = 0; i < row; i++)
             {
                 for (int j = 0; j < col; j++)
@@ -49,20 +68,20 @@ namespace File_1
             Console.WriteLine();
 
 
-            Console.WriteLine("Итоговая матрица: ");
+            Console.WriteLine("Исходная матрица два:");
+            // заполнение второй матрицы
+            foreach (int item in matrix2)
+            {
+                Console.Write($"{random.Next(1, 101)}\t");
+            }
 
-            matrix = multiMatrix (matrix, factor);
+            //Console.WriteLine("Итоговая матрица: ");
+
+            //matrix = matrixMultiFactor (matrix, factor);
+            // Console.WriteLine(matrix);
 
 
-            //for (int i = 0; i < row; i++)
-            //{
-            //    for (int j = 0; j < col; j++)
-            //    {
-            //        //matrix[i, j] = matrix[i, j] * factor;
-            //        Console.Write($"{matrix[i, j]}\t");
-            //    }
-            //    Console.WriteLine();
-            //}
+            //
             Console.ReadKey();
 
 
