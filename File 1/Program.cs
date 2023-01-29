@@ -14,6 +14,14 @@ namespace File_1
             // 1.2. Создать метод, принимающий две матрицу, возвращающий их сумму
             // 1.3. Создать метод, принимающий две матрицу, возвращающий их произведение
 
+        static void multiMatrix (int [,] matrix, int multi) 
+        {
+            foreach (int item in matrix)
+            {
+                Console.Write(item * multi);
+            }
+            
+        }
 
         static void Main(string[] args)
         {
@@ -43,20 +51,19 @@ namespace File_1
 
             Console.WriteLine("Итоговая матрица: ");
 
-            foreach (int item in matrix)
-            {
-                Console.WriteLine(item * factor);
-            }
+            matrix = multiMatrix (matrix, factor);
+
+
             //for (int i = 0; i < row; i++)
             //{
             //    for (int j = 0; j < col; j++)
             //    {
-            //        matrix[i, j] = matrix[i, j] * factor;
+            //        //matrix[i, j] = matrix[i, j] * factor;
             //        Console.Write($"{matrix[i, j]}\t");
             //    }
             //    Console.WriteLine();
             //}
-            //Console.ReadKey();
+            Console.ReadKey();
 
 
 
