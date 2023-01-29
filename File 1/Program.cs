@@ -37,9 +37,6 @@ namespace File_1
 
         // метод производящий сложение двух матриц
  
-
-
-
         static void Main(string[] args)
         {
             Console.Write("введите количество строк матрицы:");
@@ -75,7 +72,7 @@ namespace File_1
                 Console.Write($"{random.Next(1, 101)}\t");
             }
 
-            //Console.WriteLine("Итоговая матрица: ");
+            Console.WriteLine("Итоговая матрица: ");
 
             //matrix = matrixMultiFactor (matrix, factor);
             // Console.WriteLine(matrix);
