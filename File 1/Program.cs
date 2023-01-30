@@ -17,19 +17,29 @@ namespace File_1
         // метод умножающий матрицу на число
         static int [,] matrixMultiFactor (int factor, int[,] arroy)
         {
-           
-            foreach (int item in arroy)
+            for (int i = 0; i <arroy.GetLength(0); i++)
             {
-              Console.Write($"{item * factor}\t" );
+                for (int j = 0; j < arroy.GetLength(1); j++)
+                {
+                    arroy[i, j] = arroy[i,j] * factor;
+                }
             }
-            //for (int i = 0; i < matrix.Length; i++)
+
+            //Console.WriteLine("Итоговая матрица: ");
+            //for (inti = 0; i
             //{
-            //    for (int j = 0; j < matrix.Length; j++)
+            //    for (intj = 0; j
             //    {
             //        matrix[i, j] = matrix[i, j] * factor;
-            //        //Console.Write($"{matrix[i, j]}\t");
+            //        Console.Write($"{matrix[i, j]}\t");
             //    }
+            //    Console.WriteLine();
             //}
+            //foreach (int item in arroy)
+            //{
+            //   => * factor;
+            //}
+
             return arroy;
         }
 
@@ -91,16 +101,14 @@ namespace File_1
             MatrixRes1 =  matrixMultiFactor(factor, matrix);
             Console.WriteLine();
 
-            int count1 = 0;
             foreach (int item in MatrixRes1)
             {
-
                 Console.Write($"{item}\t");
-                count1++;
-                if (count1 % col == 0)
+                count++;
+                if (count % col == 0)
                 {
                     Console.WriteLine();
-                    count1 = 0;
+                    count = 0;
                 }
             }
             Console.WriteLine();
