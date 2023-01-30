@@ -15,12 +15,12 @@ namespace File_1
         // 1.3. Создать метод, принимающий две матрицу, возвращающий их произведение
 
         // метод умножающий матрицу на число
-        static int matrixMultiFactor (int factor, int[,] arroy)
+        static int [,] matrixMultiFactor (int factor, int[,] arroy)
         {
            
             foreach (int item in arroy)
             {
-              Console.Write( item * factor);
+              Console.Write($"{item * factor}\t" );
             }
             //for (int i = 0; i < matrix.Length; i++)
             //{
@@ -87,23 +87,24 @@ namespace File_1
             Console.WriteLine();
 
             Console.WriteLine("Итоговая матрица от умножения на число: ");
+            int [,] MatrixRes1;
+            MatrixRes1 =  matrixMultiFactor(factor, matrix);
+            Console.WriteLine();
 
-            matrix = matrixMultiFactor(factor, matrix);
-            //int count = 0;
-            //foreach (int item in matrix)
-            //{
+            int count1 = 0;
+            foreach (int item in MatrixRes1)
+            {
 
-            //    Console.Write($"{matrix}\t");
-            //    count++;
-            //    if (count % col == 0)
-            //    {
-            //        Console.WriteLine();
-            //        count = 0;
-            //    }
-            //}
-            //Console.WriteLine();
+                Console.Write($"{item}\t");
+                count1++;
+                if (count1 % col == 0)
+                {
+                    Console.WriteLine();
+                    count1 = 0;
+                }
+            }
+            Console.WriteLine();
 
-            //
             Console.ReadKey();
 
 
