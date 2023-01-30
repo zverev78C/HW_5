@@ -44,7 +44,19 @@ namespace File_1
         }
 
         // метод производящий сложение двух матриц
+        static int[,] SumMatrix(int [,] arroy1 ,int [,] arroy2)
+        {
+            int[,] arroy3 = new int[arroy1.GetLength(0), arroy1.GetLength(1)];
 
+            for (int i = 0; i < arroy3.GetLength(0); i++)
+            {
+                for (int j = 0; j < arroy3.GetLength(1); j++)
+                {
+                    arroy3[i, j] = arroy1[i, j] + arroy2[i, j];
+                }
+            }
+            return arroy3;
+        }
         static void Main(string[] args)
         {
             Console.Write("введите количество строк матрицы:");
@@ -116,6 +128,22 @@ namespace File_1
                 }
             }
             Console.WriteLine();
+
+            Console.WriteLine("Итоговая матрица от сложения двух матриц: ");
+            int[,] MatrixRes3;
+            MatrixRes3 = SumMatrix(matrix, matrix2);
+            foreach (int item in MatrixRes3)
+            {
+                Console.Write($"{item}\t");
+                count++;
+                if (count % MatrixRes3.GetLength(0) == 0)
+                {
+                    Console.WriteLine();
+                    count = 0;
+                }
+            }
+            Console.WriteLine();
+
 
             Console.ReadKey();
         }
