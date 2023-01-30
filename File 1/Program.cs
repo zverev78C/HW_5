@@ -17,14 +17,15 @@ namespace File_1
         // метод умножающий матрицу на число
         static int[,] matrixMultiFactor(int factor, int[,] arroy)
         {
+            int[,] arroyFactor = new int [ arroy.GetLength(0), arroy.GetLength(1)];
             for (int i = 0; i < arroy.GetLength(0); i++)
             {
                 for (int j = 0; j < arroy.GetLength(1); j++)
                 {
-                    arroy[i, j] = arroy[i, j] * factor;
+                    arroyFactor [i, j] = arroy[i, j] * factor;
                 }
             }
-            return arroy;
+            return arroyFactor;
         }
 
         // Метод умножающий две матрицы
