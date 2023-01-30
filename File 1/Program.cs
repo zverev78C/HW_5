@@ -57,6 +57,8 @@ namespace File_1
             }
             return arroy3;
         }
+
+
         static void Main(string[] args)
         {
             Console.Write("введите количество строк матрицы:");
@@ -83,7 +85,6 @@ namespace File_1
                 Console.WriteLine();
             }
             Console.WriteLine();
-
 
             Console.WriteLine("Исходная матрица два:");
             // заполнение второй матрицы
@@ -143,7 +144,6 @@ namespace File_1
                 }
             }
             Console.WriteLine();
-
 
             Console.ReadKey();
         }

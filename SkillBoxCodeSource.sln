@@ -279,7 +279,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "from page _1", "from page _
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "from page_2", "from page_2\from page_2.csproj", "{9A741936-8C15-45D4-9BAD-A1F89676712C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File 1", "File 1\File 1.csproj", "{B640EBD6-E69B-47C6-9977-B70B9154F5C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File 1_done", "File 1\File 1_done.csproj", "{B640EBD6-E69B-47C6-9977-B70B9154F5C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File_2", "File_2\File_2.csproj", "{3C893FEF-1C3E-40C2-9277-3EFDBD026ED6}"
 EndProject
