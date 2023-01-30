@@ -15,40 +15,32 @@ namespace File_1
         // 1.3. Создать метод, принимающий две матрицу, возвращающий их произведение
 
         // метод умножающий матрицу на число
-        static int [,] matrixMultiFactor (int factor, int[,] arroy)
+        static int[,] matrixMultiFactor(int factor, int[,] arroy)
         {
-            for (int i = 0; i <arroy.GetLength(0); i++)
+            for (int i = 0; i < arroy.GetLength(0); i++)
             {
                 for (int j = 0; j < arroy.GetLength(1); j++)
                 {
-                    arroy[i, j] = arroy[i,j] * factor;
+                    arroy[i, j] = arroy[i, j] * factor;
                 }
             }
-
-            //Console.WriteLine("Итоговая матрица: ");
-            //for (inti = 0; i
-            //{
-            //    for (intj = 0; j
-            //    {
-            //        matrix[i, j] = matrix[i, j] * factor;
-            //        Console.Write($"{matrix[i, j]}\t");
-            //    }
-            //    Console.WriteLine();
-            //}
-            //foreach (int item in arroy)
-            //{
-            //   => * factor;
-            //}
-
             return arroy;
         }
 
         // Метод умножающий две матрицы
-        //static int multiMatrix (int [,] matrix, int [,] matrix2) 
-        //{
-        //    return matrixRes;
-        //}
+        static int [,] multiMatrix(int[,] arroy1, int[,] arroy2)
+        {
+            int[,] arroy3 = new int[arroy1.GetLength(0), arroy1.GetLength(1)];
 
+            for (int i = 0; i < arroy3.GetLength(0); i++)
+            {
+                for (int j = 0; j < arroy3.GetLength(1); j++)
+                {
+                    arroy3[i,j] = arroy1 [i,j] * arroy2 [i,j];
+                }
+            }
+            return arroy3;
+        }
 
         // метод производящий сложение двух матриц
 
@@ -82,25 +74,21 @@ namespace File_1
 
             Console.WriteLine("Исходная матрица два:");
             // заполнение второй матрицы
-            int count = 0;
-            foreach (int item in matrix2)
+            for (int i = 0; i < row; i++)
             {
-
-                Console.Write($"{random.Next(1, 101)}\t");
-                count++;
-                if (count % col == 0)
+                for (int j = 0; j < col; j++)
                 {
-                    Console.WriteLine();
-                    count = 0;
+                    matrix2[i, j] = random.Next(1, 101);
+                    Console.Write($"{matrix2[i, j]}\t");
                 }
+                Console.WriteLine();
             }
             Console.WriteLine();
 
             Console.WriteLine("Итоговая матрица от умножения на число: ");
-            int [,] MatrixRes1;
-            MatrixRes1 =  matrixMultiFactor(factor, matrix);
-            Console.WriteLine();
-
+            int[,] MatrixRes1;
+            MatrixRes1 = matrixMultiFactor(factor, matrix);
+            int count = 0;
             foreach (int item in MatrixRes1)
             {
                 Console.Write($"{item}\t");
@@ -113,10 +101,22 @@ namespace File_1
             }
             Console.WriteLine();
 
+            Console.WriteLine("Итоговая матрица от умножения двух матриц: ");
+            int[,] MatrixRes2;
+            MatrixRes2 = multiMatrix(matrix, matrix2);
+            foreach (int item in MatrixRes2)
+            {
+                Console.Write($"{item}\t");
+                count++;
+                if (count % MatrixRes2.GetLength(0) == 0)
+                {
+                    Console.WriteLine();
+                    count = 0;
+                }
+            }
+            Console.WriteLine();
+
             Console.ReadKey();
-
-
-
         }
     }
 }
