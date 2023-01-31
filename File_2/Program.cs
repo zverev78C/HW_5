@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace File_2
@@ -20,23 +21,23 @@ namespace File_2
             string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
             sentence = Console.ReadLine(); // Заполняем переменный предложением.
-
             string[] words = SeparatesWords(sentence);
             string MinWord = WordWithMinChar(words);
             Console.WriteLine($"Самое маленькое слово: {MinWord}");
-            string MaxWord = WordWithMaxChar(words);
-            Console.WriteLine($"Самое большое слово:  + {MaxWord}");
+            string [] MaxWord = WordWithMaxChar(words);
+            Console.Write($"Самое большое слово: ");
+            foreach(string word in MaxWord)
+            {
+                Console.Write(word +" ");
+            }
             Console.ReadKey();
         }
 
-        // метод преобразующий текст в массив
         static string[] SeparatesWords(string Text)
         {
-            string[] words = Text.Split(' ');
+            string[] words = Text.Split(' ','.',',') ;
             return words;
-        }
-
-        // метод минимум букв
+        }     // метод преобразующий текст в массив
         static string WordWithMinChar (string[] text)
         {
             string word = text[0];
@@ -46,18 +47,28 @@ namespace File_2
                     word = t;
             }
             return word;
-        }
-
-        // метод максимум букв
-        static string WordWithMaxChar(string[] text)
+        }   // метод минимум букв
+        static string[] WordWithMaxChar(string[] text)
         {
             string word = text[0];
+            int count = 1;
             foreach (string t in text)
             {
                 if (word.Length < t.Length)
                     word = t;
+                else if (word.Length == t.Length)
+                    count++;
+            } // выявляем самое большое слово и количество этих слов
+            string [] word2 = new string [count];
+            for (int i = 0; i < text.Length; i++)
+            {
+            int j = 0;
+                if (word.Length == text[i].Length)
+                    j++;
+                    word2[j] = text[i];
             }
-            return word;
-        }
+            word2[0] = word;
+            return word2;
+        }  // метод максимум букв
     }
 }
