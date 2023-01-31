@@ -50,36 +50,29 @@ namespace from_page_2
         static void ReversWords(string inputPhrase)
         {
             string[] arroy = SeparatesWords(inputPhrase);
-            string[] newArroy = arroy;
-            //for (int i = 0; i <= arroy.GetLength; i++)
+            
+            //string[] arroy = text.ToStrigArroy ();
+            Array.Reverse(arroy);
+            //return new string(chars);
+
+            //string[] newArroy = arroy;
+            //for (int i = 0; i < arroy.GetLength(0); i++)
             //{
-            //    newArroy[i] = arroy[arroy.GetLength - i];
+            //    newArroy[i] = arroy[arroy.GetLength(0) - i];
             //}
-            Console.WriteLine();
-            foreach (string word in newArroy)
+            //Console.WriteLine();
+
+            // вывод в консоль итогового предложения
+            foreach (string word in arroy)
             {
                 Console.Write($"{word} ");
             }
         }
 
-        // метод вывода слов в отдельных строках
-        //static void Print(string[] words)
-        //{
-        //    foreach (string word in words)
-        //    {
-        //        Console.WriteLine($"{word}");
-        //    }
-        //}
-
         static void Main(string[] args)
         {
-
-            //string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
-            //sentence = Console.ReadLine(); // Заполняем переменный предложением.
             ReversWords(Console.ReadLine());
-
-            //Print(words);
             Console.ReadKey();
         }
     }
