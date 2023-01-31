@@ -5,11 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace from_page_2
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
+
             #region
             //Задание 2.Перестановка слов в предложении
 
@@ -40,13 +36,41 @@ namespace from_page_2
             //Вызов метода по разделению на слова происходит внутри метода,
             //который отвечает непосредственно за инвертирование слов в предложении.
             #endregion
+{
+    internal class Program
+    {
+        // метод разделения предложения в массив слов
+        static string[] SeparatesWords(string Text)
+        {
+            string[] words = Text.Split(' ');
+            return words;
+        }
+
+        // метод меняющий слова местами
+        static string [] ReversWords(string inputPhrase)
+        {
+            string[] arroy = SeparatesWords(inputPhrase);
+            return arroy;
+        }
+
+        // метод вывода слов в отдельных строках
+        static void Print(string[] words)
+        {
+            foreach (string word in words)
+            {
+                Console.WriteLine($"{word}");
+            }
+        }
+
+        static void Main(string[] args)
+        {
 
             string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
             sentence = Console.ReadLine(); // Заполняем переменный предложением.
+            string[] words = ReversWords(sentence);
 
-
-
+            Print(words);
             Console.ReadKey();
         }
     }

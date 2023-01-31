@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 namespace File_5
 {
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
             // *Задание 5
             // Вычислить, используя рекурсию, функцию Аккермана:
             // A(2, 5), A(1, 2)
@@ -17,6 +13,11 @@ namespace File_5
             //         = A(n - 1, 1), если n <> 0, m = 0,
             //         = A(n - 1, A(n, m - 1)), если n> 0, m > 0.
             // 
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
         }
     }
 }
