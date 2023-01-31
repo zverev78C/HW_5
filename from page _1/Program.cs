@@ -32,26 +32,21 @@ namespace from_page__1
 {
     internal class Program
     {
-            /// <summary>
-            /// метод разделения предложения в массив слов
-            /// </summary>
-            /// <returns>массив слов</returns>
+            // метод разделения предложения в массив слов
             static string[] SeparatesWords(string Text)
             {
                 string[] words = Text.Split(' ');
                 return words;
             }
-
-        ///// <summary>
-        ///// метод вывода слов в отдельных строках
-        ///// </summary>
-        static void Print(string[] words)
-        {
-            foreach (string word in words)
+        
+            // метод вывода слов в отдельных строках
+            static void Print(string[] words)
             {
-                Console.Write($"{word}" + "\n");
+                 foreach (string word in words)
+                 {
+                  Console.WriteLine ($"{word}");
+                 }
             }
-        }
 
 
 
@@ -60,11 +55,11 @@ namespace from_page__1
             string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
             sentence = Console.ReadLine(); // Заполняем переменный предложением.
-            
-            //string [] arr = SeparatesWords (sentence); // переменная массив для возвращения первого метода
-            //Print(arr); // вызов второго метода для вывода на экран консоли
+            Console.WriteLine();
+            string [] words = SeparatesWords (sentence); // переменная массив для возвращения первого метода
+            Print(words); // вызов второго метода для вывода на экран консоли
 
             Console.ReadKey();
         }
-    }
+    } 
 }
