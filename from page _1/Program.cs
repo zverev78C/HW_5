@@ -6,36 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace from_page__1
-{
-    internal class Program
-    {
-        
-
-
-
-        static void Main(string[] args)
-        {
-
-            /// <summary>
-            /// метод разделения предложения в массив слов
-            /// </summary>
-            /// <returns>массив слов</returns>
-            //static string SeparatesWords (string Text)
-            //{
-            //    string[] words = Text.Split(' ');
-            //    return words;
-            //}
-
-            ///// <summary>
-            ///// метод вывода слов в отдельных строках
-            ///// </summary>
-            //static void Print(string[] words)
-            //{
-            //    for (int i = 0; i < words.Length; i++)
-            //    {
-            //        Console.Write($"{words[i]}" + "\n");
-            //    }
-            //}
             #region
             //Задание 1.Метод разделения строки на слова
             //Что нужно сделать
@@ -46,8 +16,6 @@ namespace from_page__1
             //После вызова данного метода программа вызывает второй метод,
             //который выводит каждое слово в отдельной строке.   
 
-
-
             //Советы и рекомендации
             //Для реализации данной программы можно написать алгоритм разделения на слова самостоятельно,
             //используя цикл.Также можете использовать метод string.Split(‘ ’);
@@ -57,12 +25,38 @@ namespace from_page__1
             //Например, метод с именем GetPositiveRandomInt возвращает положительное целое случайное число.
             //По такому же принципу следует называть и свои методы.
 
-
             //Что оценивается
             //В программе, помимо основного метода main, присутствует два других метода, которые вызываются в теле метода main.
             //Названием методов соответствуют тому, что они делают(разделяют или выводят данные).
             #endregion
+{
+    internal class Program
+    {
+            /// <summary>
+            /// метод разделения предложения в массив слов
+            /// </summary>
+            /// <returns>массив слов</returns>
+            static string[] SeparatesWords(string Text)
+            {
+                string[] words = Text.Split(' ');
+                return words;
+            }
 
+        ///// <summary>
+        ///// метод вывода слов в отдельных строках
+        ///// </summary>
+        static void Print(string[] words)
+        {
+            foreach (string word in words)
+            {
+                Console.Write($"{word}" + "\n");
+            }
+        }
+
+
+
+        static void Main(string[] args)
+        {
             string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
             sentence = Console.ReadLine(); // Заполняем переменный предложением.
