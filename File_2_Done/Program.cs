@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace File_2
 {
@@ -32,7 +27,6 @@ namespace File_2
             }
             Console.ReadKey();
         }
-
         static string[] SeparatesWords(string Text)
         {
             string[] words = Text.Split(' ','.',',') ;
@@ -51,7 +45,7 @@ namespace File_2
         static string[] WordWithMaxChar(string[] text)
         {
             string word = text[0];
-            int count = 1;
+            int count = 0;
             foreach (string t in text)
             {
                 if (word.Length < t.Length)
@@ -60,14 +54,22 @@ namespace File_2
                     count++;
             } // выявляем самое большое слово и количество этих слов
             string [] word2 = new string [count];
-            for (int i = 0; i < text.Length; i++)
+            int j=-0;
+            foreach (string t in text) 
             {
-            int j = 0;
-                if (word.Length == text[i].Length)
+                if (word.Length == t.Length)
+                {
+                    word2[j] = t;
                     j++;
-                    word2[j] = text[i];
+                }
             }
-            word2[0] = word;
+            //for (int i = 0; i < text.Length; i++)
+            //{
+            //    if (word.Length == text[i].Length)
+            //        word2[j] = text[i];
+            //        j++;
+            //}
+            //word2[0] = word;
             return word2;
         }  // метод максимум букв
     }
