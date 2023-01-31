@@ -21,11 +21,11 @@ namespace File_2
             Console.WriteLine("Введите предложение:");
             sentence = Console.ReadLine(); // Заполняем переменный предложением.
 
-            //string[] words = SeparatesWords(sentence);
-            //string MinWord = WordWithMinChar(words);
-            //Console.WriteLine($"Самое маленькое слово:  + {MinWord}");
-            //string MaxWord = WordWithMaxChar(words);
-            //Console.WriteLine()
+            string[] words = SeparatesWords(sentence);
+            string MinWord = WordWithMinChar(words);
+            Console.WriteLine($"Самое маленькое слово: {MinWord}");
+            string MaxWord = WordWithMaxChar(words);
+            Console.WriteLine($"Самое большое слово:  + {MaxWord}");
             Console.ReadKey();
         }
 
@@ -39,17 +39,25 @@ namespace File_2
         // метод минимум букв
         static string WordWithMinChar (string[] text)
         {
-            string word;
-
-            return Word;
+            string word = text[0];
+            foreach (string t in text)
+            {
+                if (word.Length > t.Length)
+                    word = t;
+            }
+            return word;
         }
 
         // метод максимум букв
         static string WordWithMaxChar(string[] text)
         {
-            string word;
-
-            return Word;
+            string word = text[0];
+            foreach (string t in text)
+            {
+                if (word.Length < t.Length)
+                    word = t;
+            }
+            return word;
         }
     }
 }
