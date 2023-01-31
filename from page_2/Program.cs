@@ -47,30 +47,39 @@ namespace from_page_2
         }
 
         // метод меняющий слова местами
-        static string [] ReversWords(string inputPhrase)
+        static void ReversWords(string inputPhrase)
         {
             string[] arroy = SeparatesWords(inputPhrase);
-            return arroy;
+            string[] newArroy = arroy;
+            //for (int i = 0; i <= arroy.GetLength; i++)
+            //{
+            //    newArroy[i] = arroy[arroy.GetLength - i];
+            //}
+            Console.WriteLine();
+            foreach (string word in newArroy)
+            {
+                Console.Write($"{word} ");
+            }
         }
 
         // метод вывода слов в отдельных строках
-        static void Print(string[] words)
-        {
-            foreach (string word in words)
-            {
-                Console.WriteLine($"{word}");
-            }
-        }
+        //static void Print(string[] words)
+        //{
+        //    foreach (string word in words)
+        //    {
+        //        Console.WriteLine($"{word}");
+        //    }
+        //}
 
         static void Main(string[] args)
         {
 
-            string sentence; // переменая для предложения
+            //string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
-            sentence = Console.ReadLine(); // Заполняем переменный предложением.
-            string[] words = ReversWords(sentence);
+            //sentence = Console.ReadLine(); // Заполняем переменный предложением.
+            ReversWords(Console.ReadLine());
 
-            Print(words);
+            //Print(words);
             Console.ReadKey();
         }
     }
