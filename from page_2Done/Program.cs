@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace from_page_2
-
+{
             #region
             //Задание 2.Перестановка слов в предложении
 
@@ -36,7 +36,6 @@ namespace from_page_2
             //Вызов метода по разделению на слова происходит внутри метода,
             //который отвечает непосредственно за инвертирование слов в предложении.
             #endregion
-{
     internal class Program
     {
         // метод разделения предложения в массив слов
@@ -51,16 +50,8 @@ namespace from_page_2
         {
             string[] arroy = SeparatesWords(inputPhrase);
             
-            //string[] arroy = text.ToStrigArroy ();
             Array.Reverse(arroy);
-            //return new string(chars);
-
-            //string[] newArroy = arroy;
-            //for (int i = 0; i < arroy.GetLength(0); i++)
-            //{
-            //    newArroy[i] = arroy[arroy.GetLength(0) - i];
-            //}
-            //Console.WriteLine();
+            Console.WriteLine();
 
             // вывод в консоль итогового предложения
             foreach (string word in arroy)
