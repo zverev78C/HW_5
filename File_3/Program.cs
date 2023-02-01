@@ -13,26 +13,53 @@ namespace File_3
             // Пример: Ххххоооорррооошшшиий деееннннь >>> хороший день
     internal class Program
     {
-        static string NotRepeat (string text)
+        static char[] NotRepeat (string text)   // метод удаления дублей знаков в словах
         {
-            char[] chars = text.ToCharArray ();
-            foreach (char c in chars) 
+            int k = 1;
+            char[] chars = text.ToCharArray ();     // переводим стринг в массив чаров
+            //for (int i = 0; i < chars.Length; i++)               // цикл проходит по массиву
+            //{
+            //    for (int j = 0; j < chars.Length; j++)      // цикл проходит по массиву второй раз что бы сравнить 1 и второй символ
+            //    {
+            //        char[] NewChar = new char[k+1];             // новый массив для записи не парных символов
+            //        if (chars[i] != chars[j])                 // проверка апрности
+            //        {
+            //            NewChar[k] = chars[i];
+            //            k++;
+            //            break;
+            //        }
+            //        break;
+            //    }
+            //}
+
+            for (int i = 0; i < chars.Length; i++)
             {
-                char simbol = c;
-                if (simbol == c)
+                char[] temp = new char[k];
+                switch (true)
                 {
-                    Console.delete c;
+                    case (i == 0):
+                    temp[0]= chars[i];
+                        break;
+                    case (chars[i] == chars[i + 1]):
+                        break;
+                    default:
+                        temp[k-1] = chars[i];
+                        k++;
+                        break;
                 }
-                else simbol = c;
+
+                Console.WriteLine(temp[k-1]);
             }
-            return (text);
+               // temp[k-1] = chars[i];
+          
+            return (chars);
         }
         static void Main(string[] args)
         {
             string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
             sentence = Console.ReadLine();
-            string result = NotRepeat(sentence);
+            char[] result = NotRepeat(sentence);
             Console.WriteLine(result);
             Console.ReadKey();
         }
