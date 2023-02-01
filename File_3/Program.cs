@@ -15,6 +15,16 @@ namespace File_3
     {
         static string NotRepeat (string text)
         {
+            char[] chars = text.ToCharArray ();
+            foreach (char c in chars) 
+            {
+                char simbol = c;
+                if (simbol == c)
+                {
+                    Console.delete c;
+                }
+                else simbol = c;
+            }
             return (text);
         }
         static void Main(string[] args)
