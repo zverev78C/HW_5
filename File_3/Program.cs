@@ -15,44 +15,32 @@ namespace File_3
     {
         static char[] NotRepeat (string text)   // метод удаления дублей знаков в словах
         {
-            int k = 1;
             char[] chars = text.ToCharArray ();     // переводим стринг в массив чаров
-            //for (int i = 0; i < chars.Length; i++)               // цикл проходит по массиву
-            //{
-            //    for (int j = 0; j < chars.Length; j++)      // цикл проходит по массиву второй раз что бы сравнить 1 и второй символ
-            //    {
-            //        char[] NewChar = new char[k+1];             // новый массив для записи не парных символов
-            //        if (chars[i] != chars[j])                 // проверка апрности
-            //        {
-            //            NewChar[k] = chars[i];
-            //            k++;
-            //            break;
-            //        }
-            //        break;
-            //    }
-            //}
-
-            for (int i = 0; i < chars.Length; i++)
+            int k = 0; // счетчик не повторяемых символов
+                char[] temp = new char[chars.Length]; // времееный массив для сортировки не повторяемых символов
+            for (int i = 0; i < chars.Length; i++) // цикл проверки символов
             {
-                char[] temp = new char[k];
-                switch (true)
+                for (int j = i + 1;j<chars.Length;)   // цикл открывающий следующий символ
                 {
-                    case (i == 0):
-                    temp[0]= chars[i];
-                        break;
-                    case (chars[i] == chars[i + 1]):
-                        break;
-                    default:
-                        temp[k-1] = chars[i];
+                    if (chars[i] == chars[j])  // сравнение символа со следующим за ним
+                    {
+                        break;    // если одинковые возвращаемся к первому циклу
+                    }
+                    else                // если разные то текущий символ записываем во врмееный массив
+                    {
+                        temp[k] = chars[i];
                         k++;
-                        break;
+                        break;           //возврат к первому циклу
+                    }
                 }
-
-                Console.WriteLine(temp[k-1]);
+                temp[k] = chars[i];       // записываем последний символ во временный массив
             }
-               // temp[k-1] = chars[i];
-          
-            return (chars);
+            char[]result = new char[k+1];        // создаем массив для возвращения в программу
+            for (int i = 0;i < result.Length;i++)
+            {
+                result[i] = temp[i];
+            }
+            return (result);
         }
         static void Main(string[] args)
         {
@@ -60,6 +48,7 @@ namespace File_3
             Console.WriteLine("Введите предложение:");
             sentence = Console.ReadLine();
             char[] result = NotRepeat(sentence);
+            Console.WriteLine();
             Console.WriteLine(result);
             Console.ReadKey();
         }
