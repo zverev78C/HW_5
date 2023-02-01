@@ -13,12 +13,17 @@ namespace File_3
             // Пример: Ххххоооорррооошшшиий деееннннь >>> хороший день
     internal class Program
     {
+        static string NotRepeat (string text)
+        {
+            return (text);
+        }
         static void Main(string[] args)
         {
             string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
-            sentence = Console.ReadLine(); // Заполняем переменный предложением.
-
+            sentence = Console.ReadLine();
+            string result = NotRepeat(sentence);
+            Console.WriteLine(result);
             Console.ReadKey();
         }
     }
