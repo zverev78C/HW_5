@@ -17,7 +17,7 @@ namespace File_5
     {
         static void Main(string[] args)
         {
-
+            int[] aker = new int[2];
         }
     }
 }

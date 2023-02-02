@@ -19,7 +19,10 @@ namespace File_4
         {
             Console.WriteLine("Это прогрмамма для сравнения ряда чисел на наличие Арифметической или Геометрической прогрессии.");
             int Vol = 1;
-            int[] Numders = new int[Vol]
+            int[] Numders = new int[Vol];
+
+
+
             Console.ReadLine();
         }
     }
