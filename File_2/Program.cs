@@ -15,7 +15,7 @@ namespace File_2
         {
             string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
-            sentence = Console.ReadLine(); // Заполняем переменный предложением.
+            sentence = Console.ReadLine(); // Заполняем переменную предложением.
             string[] words = SeparatesWords(sentence);
             string MinWord = WordWithMinChar(words);
             Console.WriteLine($"Самое маленькое слово: {MinWord}");
@@ -63,13 +63,6 @@ namespace File_2
                     j++;
                 }
             }
-            //for (int i = 0; i < text.Length; i++)
-            //{
-            //    if (word.Length == text[i].Length)
-            //        word2[j] = text[i];
-            //        j++;
-            //}
-            //word2[0] = word;
             return word2;
         }  // метод максимум букв
     }
