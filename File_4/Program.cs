@@ -21,7 +21,7 @@ namespace File_4
             "Геометрической прогрессии.");
             int[] Numbers;
             Numbers = ReadNumb();
-            bool NewCheck = true;
+            bool ArithCheck = true;
             int Arith = Numbers[1] - Numbers[0];
             for (int i = 1; i < Numbers.Length; i++)
             {
@@ -29,12 +29,12 @@ namespace File_4
              if (Arith != TempValue)
              {
               Console.WriteLine("Последовотельность не является арифметической");
-              NewCheck = false;
+              ArithCheck = false;
               break;
              } 
             }
 
-            if (NewCheck == false)
+            if (ArithCheck == false)
             {
                 bool Geo = true;
                 float Geom = Numbers[1] % Numbers[0];
@@ -62,22 +62,7 @@ namespace File_4
            
             Console.ReadLine();
         }
-        static void Check(int[]Numbers)
-        {
-            bool Check = false;
-               if (Check == true)   // Первый цикл проверяет последовательность на Арифм. Прогрессию
-               {
-                Console.WriteLine("Эта последовательность является Арифмитической прогрессией");
-               }
-               else if (Check == true) // если первый цикл не подверждается то второй цикл проверяет последовательность на Геометр. прогрессию
-               {
-                Console.WriteLine("Эта последовательность является геометрической прогрессией");
-               }
-               else     // если оба цикла дали отрицательный ответ то выводится сообщение об отсутсвии прогрессии 
-               {
-                Console.WriteLine("В последовательности нет искомой прогрессии");
-               }
-        }  // #2 проверкак последовательностей
+    
         static int[] ReadNumb()
         {
             Console.WriteLine("Сколько чисел вы хотите проверить?");
