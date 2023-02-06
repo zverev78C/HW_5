@@ -18,31 +18,48 @@ namespace File_4
         static void Main(string[] args)
         {
             Console.WriteLine("Это прогрмамма для сравнения ряда чисел на наличие Арифметической или " +
-                "Геометрической прогрессии.");
-            int Vol = 1;
-            int[] Numders = new int[Vol];
-            Console.WriteLine("Введите числовой ряд по возростающей не менее трех чисел.");
-            Console.ReadLine();
+            "Геометрической прогрессии.");
+            int [] Numbers;
+            Numbers = ReadNumb();
+            foreach (int i in Numbers)
+                {
+                Console.Write($"{i} ");
+                }
 
 
 
             Console.ReadLine();
         }
         static void Check(int[]Numbers)
-            {
+        {
             bool Check = false;
-            if (Check == true)   // Первый цикл проверяет последовательность на Арифм. Прогрессию
-            {
+               if (Check == true)   // Первый цикл проверяет последовательность на Арифм. Прогрессию
+               {
                 Console.WriteLine("Эта последовательность является Арифмитической прогрессией");
-            }
-            else if (Check == true) // если первый цикл не подверждается то второй цикл проверяет последовательность на Геометр. прогрессию
-            {
+               }
+               else if (Check == true) // если первый цикл не подверждается то второй цикл проверяет последовательность на Геометр. прогрессию
+               {
                 Console.WriteLine("Эта последовательность является геометрической прогрессией");
-            }
-            else     // если оба цикла дали отрицательный ответ то выводится сообщение об отсутсвии прогрессии 
-            {
+               }
+               else     // если оба цикла дали отрицательный ответ то выводится сообщение об отсутсвии прогрессии 
+               {
                 Console.WriteLine("В последовательности нет искомой прогрессии");
+               }
+        }  // #2 проверкак последовательностей
+        static int[] ReadNumb()
+        {
+            Console.WriteLine("Сколько чисел вы хотите проверить?");
+            int vol = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите числа");
+            int[] arroy = new int[vol];
+            for(int i =0; i<arroy.Length; i++)
+            {
+                arroy[i] = Convert.ToInt32(Console.ReadLine());
             }
-            }
-        }
+             
+          return arroy;
+        }    // метод принимающий числа
+    }
+
+        
 }
