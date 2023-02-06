@@ -16,7 +16,7 @@ namespace File_4
         //             http://ru.wikipedia.org/wiki/Геометрическая_прогрессия
         //
         static void Main(string[] args)
-            {
+        {
             Console.WriteLine("Это прогрмамма для сравнения ряда чисел на наличие Арифметической или " +
             "Геометрической прогрессии.");
             int[] Numbers;
@@ -35,25 +35,31 @@ namespace File_4
             }
 
             if (NewCheck == false)
-                {
+            {
+                bool Geo = true;
                 float Geom = Numbers[1] % Numbers[0];
                 for (int i = 1; i < Numbers.Length; i++)
-                    {
+                {
                     float TempValue = Numbers[i] % Numbers[i - 1];
                     if (Geom != TempValue)
-                        {
+                    {
                         Console.WriteLine("Последовотельность не является Геометрической");
+                        Geo= false;
                         break;
-                        }
                     }
-                Console.WriteLine("Последовотельность является Геометрической");
                 }
-            else { Console.WriteLine("Последовотельность является арифметической");}
 
-            foreach (int i in Numbers)
+                if (Geo == true)
                 {
-                Console.Write($"{i} ");
-                }
+                    Console.WriteLine("Последовотельность является Геометрической");
+                } 
+            }
+            else 
+            {
+                Console.WriteLine("Последовотельность является арифметической");
+            }
+
+           
             Console.ReadLine();
         }
         static void Check(int[]Numbers)
