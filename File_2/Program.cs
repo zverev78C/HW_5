@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Dynamic;
 
 namespace File_2
 {
@@ -20,8 +21,18 @@ namespace File_2
             string MinWord = WordWithMinChar(words);
             Console.WriteLine($"Самое маленькое слово: {MinWord}");
             string [] MaxWord = WordWithMaxChar(words);
-            Console.Write($"Самое большое слово: ");
-            foreach(string word in MaxWord)
+            int D = words.Length;
+            if (words.Length > 1)
+                {
+                Console.Write($"Самые большые слова: ");
+                }
+            else
+                {
+                 Console.Write($"Самое большое слово: ");
+                }
+            // D > 1 ? Console.Write($"Самые большые слова: ") :  Console.Write($"Самое большое слово: ") ;
+
+            foreach (string word in MaxWord)
             {
                 Console.Write(word +" ");
             }
@@ -29,7 +40,25 @@ namespace File_2
         }
         static string[] SeparatesWords(string Text)
         {
-            string[] words = Text.Split(' ','.',',') ;
+            string[] words1 = Text.Split(' ','.',',') ;  // разбиение строки на массив
+            string[] temp = new string[words1.Length];           // временный массив для поиска пробелов
+            int count = 0;                                       // счетчик количества пробелов                                
+            for (int i=0; i <words1.Length;i++) 
+                {
+                  if (words1[i] != "")
+                  {
+                    temp[i- count] = words1[i];    
+                  }
+                  else
+                  {
+                    count++;
+                  }
+                }           // цикл для выявления пробела в ячейках
+            string[] words = new string[words1.Length - count];
+            for (int i = 0; i < words.Length; i++)
+                {
+                words[i] = temp[i];
+                }              // цикл для создания массива без пробелов
             return words;
         }     // метод преобразующий текст в массив
         static string WordWithMinChar (string[] text)
