@@ -52,11 +52,7 @@ namespace from_page__1
 
         static void Main(string[] args)
         {
-            //string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
-            //sentence = Console.ReadLine(); // Заполняем переменный предложением.
-            //Console.WriteLine();
-            //string [] words = SplitText (sentence); // переменная массив для возвращения первого метода
             Print(SplitText(Console.ReadLine())); // вызов второго метода для вывода на экран консоли
 
             Console.ReadKey();

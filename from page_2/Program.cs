@@ -38,12 +38,14 @@ namespace from_page_2
             #endregion
     internal class Program
     {
-        // метод разделения предложения в массив слов
-        static string[] SeparatesWords(string Text)
+        static void Main(string[] args)
         {
-            string[] words = Text.Split(' ');
-            return words;
+            Console.WriteLine("Введите предложение:");
+            ReversWords(Console.ReadLine());
+            Console.ReadKey();
         }
+
+
 
         // метод меняющий слова местами
         static void ReversWords(string inputPhrase)
@@ -60,11 +62,13 @@ namespace from_page_2
             }
         }
 
-        static void Main(string[] args)
+
+        // метод разделения предложения в массив слов
+        static string[] SeparatesWords(string Text)
         {
-            Console.WriteLine("Введите предложение:");
-            ReversWords(Console.ReadLine());
-            Console.ReadKey();
+            string[] words = Text.Split(' ');
+            return words;
         }
+
     }
 }
