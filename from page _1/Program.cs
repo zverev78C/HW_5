@@ -33,7 +33,7 @@ namespace from_page__1
     internal class Program
     {
             // метод разделения предложения в массив слов
-            static string[] SeparatesWords(string Text)
+            static string[] SplitText(string Text)
             {
                 string[] words = Text.Split(' ');
                 return words;
@@ -52,12 +52,12 @@ namespace from_page__1
 
         static void Main(string[] args)
         {
-            string sentence; // переменая для предложения
+            //string sentence; // переменая для предложения
             Console.WriteLine("Введите предложение:");
-            sentence = Console.ReadLine(); // Заполняем переменный предложением.
-            Console.WriteLine();
-            string [] words = SeparatesWords (sentence); // переменная массив для возвращения первого метода
-            Print(words); // вызов второго метода для вывода на экран консоли
+            //sentence = Console.ReadLine(); // Заполняем переменный предложением.
+            //Console.WriteLine();
+            //string [] words = SplitText (sentence); // переменная массив для возвращения первого метода
+            Print(SplitText(Console.ReadLine())); // вызов второго метода для вывода на экран консоли
 
             Console.ReadKey();
         }
