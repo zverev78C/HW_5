@@ -113,7 +113,7 @@ namespace Example_003
 
             #endregion
 
-            int[] arr = new int[20];
+            int[] arr = new int[2];
 
             Fill(arr, 10);  // static void Fill(int[] Col, int Count)
             Print(arr);
